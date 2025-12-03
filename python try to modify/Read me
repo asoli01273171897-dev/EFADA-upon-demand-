@@ -1,0 +1,3 @@
+this version we built a GMM model from scratch but it was too slow at real time due to several causes the architecture was messy and the
+perpixel processes was very expensive , huge computation for each frame so we reconstructed using python lists instead of linked list construction 
+and worked on cells instead of pixel by pixel 
