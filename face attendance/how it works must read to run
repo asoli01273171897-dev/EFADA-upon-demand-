@@ -1,0 +1,9 @@
+This is a desktop app that automate the process of clock in/out for students or employees 
+I will focus in this mini documentation on the main logic and how it works the app has more functionalities than these I will mention 
+I used the Face_recognition module from dlib 
+in this specific model it works with histogram matching it breaks image into small cells (8*8) and map to histogram pattern and it looks for patterns that match the face pattern 
+so first the user take the photo when signing in or singing up 
+2. the image is sent to be encoded as mentioned before
+3.the face matching process using the eculdian distance to find similarity (checked against peolpe we know file that save the photos of known peolple)
+4.the app has the ability to generate static reports the password of the admin is sss 
+if you have any questions iam more than happy to hear from you 01044916567
