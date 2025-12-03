@@ -1,0 +1,20 @@
+OVER VIEW OF THE MAIN LOGIC 
+
+1.Reading video frame by frame
+2.Used KNN algorithm to separate moving objects with contour analysis KNN rule here was only to seperate the back-ground from fore-ground i did some contour area calculation to identify a region as a car ,truckh , or bus 
+3.after identifying objects we wanted to track each specific opject and give it ID there was already tracking function ready to use from yolo but our senior wanted to make owr own so i used simple tracking methdology that let us able to do it which depended on the distance that the opject moved the size of the object that we already have from the contour analysis done in previous step and Time and the time was 15 frames 
+4.then it is tracked within the ROI (region of intereset) until it crosses the boundary line this also was calculated from the spatial position of the center of the opject 
+5.the counter increase when so 
+
+TO CONTROL AND TRY FOR YOUR SELF : 
+you can try with any video that has cars moving in one direction just insert the abslute path of the video file in the videocapture() line 
+q to quit 
+u/d to control the line position up and down 
+r to reset the counter 
+1/2 to increase or decrease sensitivity of the background modelling in the case of my video file it is tuned as possible you might want to change it in case of another video 
+3/4 controls the learning rate parameter which mainly responsible for the fast of adaption 
+5/6 to control the interval of the zone that counts as a count if any centroied lied in 
+7/8 object size 7 to mimimize object size considered as a car 8 to increase 
+this very summraized mini documentatiion if you have any questions I will be happy to hear from you 01044916567
+
+
