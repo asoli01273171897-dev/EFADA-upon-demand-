@@ -1,4 +1,4 @@
-This is a desktop app that automate the process of clock in/out for students or employees 
+This is a desktop app that automate the process of clock in/out for students or employees  to run please compile the frondesign file 
 I will focus in this mini documentation on the main logic and how it works the app has more functionalities than these I will mention 
 I used the Face_recognition module from dlib 
 in this specific model it works with histogram matching it breaks image into small cells (8*8) and map to histogram pattern and it looks for patterns that match the face pattern 
