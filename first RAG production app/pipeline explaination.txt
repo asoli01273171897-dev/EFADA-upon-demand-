@@ -1,0 +1,29 @@
+So here’s what I’ve built: it’s a retrieval‑augmented generation (RAG) pipeline wrapped inside an event‑driven architecture using Inngest and exposed through FastAPI.
+
+Ingestion Flow
+
+I defined an Inngest function rag_ingest_pdf that gets triggered by the event rag/ingest_pdf.
+
+It loads a PDF using PyPDF2, chunks the text with overlap for semantic continuity, and then embeds those chunks using OpenAI’s text-embedding-3-small model.
+
+The embeddings, along with metadata (source ID and text), are upserted into Qdrant, which serves as the vector store.
+
+Query Flow
+
+I added another Inngest function rag_query_pdf_ai, triggered by rag/query_pdf_ai.
+
+When a question comes in, it embeds the query into a vector, searches Qdrant for the top‑k matches, and returns the contexts plus their sources.
+
+I wrapped both embedding and search inside ctx.step.run() so each step is observable and traceable in Inngest.
+
+Integration
+
+Both functions are registered with FastAPI via inngest.fast_api.serve().
+
+This means ingestion and querying are fully event‑driven, modular, and can be scaled or extended easily.
+
+Observability & Modularity
+
+Each logical step (load, chunk, embed, search, upsert) is isolated.
+
+That makes debugging straightforward and gives me visibility into where failures occur.
